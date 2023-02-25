@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Login from './Pages/Login';
+import Navbar from './Coponents/Navbar';
+import Homepage from './Pages/Homepage';
+import Footer from './Coponents/Footer';
+import Signup from './Pages/Signup';
+import Contactus from './Pages/Contactus';
+import Blog from './Pages/Blog';
+import Dailyinsights from './Pages/Dailyinsights';
+import Doctors from './Pages/Doctors';
+import Ecommerce from './Pages/Ecommerce';
+import Pcostracking from './Pages/Pcostracking';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/login" element={<Login/>}/>
+      <Route path="/" element={<><Navbar/><Homepage/><Footer/></>}/>
+      <Route path="/signup" element={<Signup/>} />
+      <Route path="/contactus" element={<><Navbar/><Contactus/><Footer/></>} />
+      <Route path="/blog" element={<><Navbar/><Blog/><Footer/></>}/>
+      <Route path="/dailyinsights" element={<><Navbar/><Dailyinsights/><Footer/></>}/>
+      <Route path="/doctors" element={<><Navbar/><Doctors/><Footer/></>}/>
+      <Route path="/ecommerce" element={<><Navbar/><Ecommerce/><Footer/></>}/>
+      <Route path="/pcostracking" element={<><Navbar/><Pcostracking/><Footer/></>}/>
+    </Routes>
   );
 }
 
