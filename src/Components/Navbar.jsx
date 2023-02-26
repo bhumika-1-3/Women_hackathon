@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
-
+import MenuIcon from '@mui/icons-material/Menu';
 const Navbar = () => {
   const [click, setClick] = useState(false);
 
@@ -10,8 +10,8 @@ const Navbar = () => {
     <>
       <nav className="navbar">
         <div className="nav-container">
-          <NavLink exact to="/" className="nav-logo">
-            CodeBucks
+          <NavLink exact to="/" className="nav-logo" style={{textAlign:"left"}}>
+            Red Rhythm
             <i className="fas fa-code"></i>
           </NavLink>
 
@@ -30,12 +30,45 @@ const Navbar = () => {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/about"
+                to="/pcostracking"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
               >
-                About
+                Pcos Tracking
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/dailyinsights"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Daily Insights
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/doctors"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Doctors
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/ecommerce"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Shop Now
               </NavLink>
             </li>
             <li className="nav-item">
@@ -52,7 +85,7 @@ const Navbar = () => {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/contact"
+                to="/contactus"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
@@ -62,7 +95,7 @@ const Navbar = () => {
             </li>
           </ul>
           <div className="nav-icon" onClick={handleClick}>
-            <i className={click ? "fas fa-times" : "fas fa-bars"}>Login</i>
+            <i className={click ? "fas fa-times" : "fas fa-bars"}><MenuIcon/></i>
           </div>
         </div>
       </nav>

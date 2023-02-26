@@ -14,7 +14,7 @@ const Contactus = () => {
                 <Grid item xs={12}>
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
-                            <Grid container spacing={2} style={{ backgroundColor: "#59D7B5" }}>
+                            <Grid container spacing={2} style={{ backgroundColor: "#F5A4C5" }}>
                                 <Grid item xs={12} style={{ height: "10vh" }}></Grid>
                                 <Grid item xs={12}>
                                     <Grid container spacing={2}>
@@ -25,7 +25,7 @@ const Contactus = () => {
                                                     Vision & Mission
                                                 </Grid>
                                                 <Grid item xs={12}>
-                                                    <hr style={{ width: "20vh", height: "0.7vh", backgroundColor: "#59D7B5", border: "none" }} />
+                                                    <hr style={{ width: "20vh", height: "0.7vh", backgroundColor: "#F5A4C5", border: "none" }} />
                                                 </Grid>
                                                 <Grid item xs={12} style={{ padding: "5vh" }}>
                                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -128,7 +128,7 @@ const Contactus = () => {
                             </iframe>
                         </Grid>
                         <Grid item xs={12} style={{ marginTop: "-1vh" }}>
-                            <Grid container spacing={2} style={{ backgroundColor: "#59D7B5" }}>
+                            <Grid container spacing={2} style={{ backgroundColor: "#F5A4C5" }}>
                                 <Grid item xs={12} style={{ height: "10vh" }}></Grid>
                                 <Grid item xs={12}>
                                     <Grid container spacing={2}>
@@ -139,7 +139,7 @@ const Contactus = () => {
                                                     Contact Us
                                                 </Grid>
                                                 <Grid item xs={12}>
-                                                    <hr style={{ width: "20vh", height: "0.7vh", backgroundColor: "#59D7B5", border: "none" }} />
+                                                    <hr style={{ width: "20vh", height: "0.7vh", backgroundColor: "#F5A4C5", border: "none" }} />
                                                 </Grid>
                                                 <Grid item xs={12} style={{ padding: "5vh" }}>
                                                     <Grid container spacing={2}>
@@ -218,7 +218,7 @@ const Contactus = () => {
                                                                 <Grid item xs={8} style={{ marginLeft: "-2.5vh" }}>
                                                                     <Button
                                                                         sx={{
-                                                                            color: "black", fontWeight: "700", backgroundColor: "#59D7B5", fontSize: "1rem", width: "20vh",
+                                                                            color: "black", fontWeight: "700", backgroundColor: "#F5A4C5", fontSize: "1rem", width: "20vh",
                                                                             "&:hover": { backgroundColor: "black", color: "#ffffff", border: "2px solid transparent" }
                                                                         }}
                                                                         className="btn">Submit</Button></Grid>

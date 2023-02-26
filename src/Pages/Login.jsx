@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import IconButton from '@mui/material/IconButton';
-//import image from '../Images/logincar.webp'
+import image from '../Images/login.png'
 const validationSchema = yup.object({
     email: yup
         .string('Enter your email')
@@ -43,9 +43,9 @@ const Login = () => {
         <div>
             <Grid container spacing={2}>
                 <Grid item xs={12} md={7}>
-                    {/*<img src={image} style={{width:"100%" , height:"100%" , margin:"1rem"}} />*/}
+                    <img src={image} style={{width:"100%" , height:"100%" , margin:"1rem"}} />
                 </Grid>
-                <Grid item xs={12} md={5} style={{marginBottom:"8rem "}}>
+                <Grid item xs={12} md={5} style={{marginBottom:"8rem",}}>
                     <div style={{ fontSize: "1.5rem"}} className="top-marg">
                         Login
                     </div>
@@ -57,7 +57,7 @@ const Login = () => {
                                         id="email"
                                         name="email"
                                         label="Email"
-                                        color='success'
+                                        color='secondary'
                                         value={formik.values.email}
                                         onChange={formik.handleChange}
                                         error={formik.touched.email && Boolean(formik.errors.email)}
@@ -84,7 +84,7 @@ const Login = () => {
                                                 </InputAdornment>
                                             )
                                         }}
-                                        color='success'
+                                        color='secondary'
                                         value={formik.values.password}
                                         onChange={formik.handleChange}
                                         error={formik.touched.password && Boolean(formik.errors.password)}
@@ -93,7 +93,7 @@ const Login = () => {
                                     />
                                 </Grid>
                             </Grid>
-                            <Button color="success" variant="contained" type="submit"
+                            <Button color="secondary" variant="contained" type="submit"
                                 sx={{ width: "90%", marginTop: "1.2rem", fontSize: "1.1rem" }}>
                                 <Link to="/" style={{textDecoration:"none" , color:"white"}}>Submit</Link>
                             </Button>

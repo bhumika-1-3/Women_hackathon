@@ -5,9 +5,25 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.top-marg{
+  margin-top: 18rem;
+}
+.top-marg-signup{
+  margin-top: 15rem;
+}
+.hide-feature{
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .top-marg, .top-marg-signup{
+    margin-top: 4rem;
+  }
 }
