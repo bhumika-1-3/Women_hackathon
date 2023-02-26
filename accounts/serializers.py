@@ -42,11 +42,13 @@ class LoginSerializer(serializers.ModelSerializer):
 
         tokens = RefreshToken.for_user(user=auth_user)
         return {
+            'id': auth_user.id,
             'email': auth_user.email,
             'name': (auth_user.first_name +" "+ auth_user.last_name),
             'refresh': str(tokens),
             'access': str(tokens.access_token),
-            'isAdmin' : str(auth_user.is_admin)
+            'isAdmin' : auth_user.is_admin,
+            'token' :  str(tokens.access_token)
         }
 
 

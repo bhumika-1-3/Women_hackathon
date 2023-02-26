@@ -41,6 +41,7 @@ urlpatterns = [
     path('account/', include('accounts.urls')),
     path('api/products/', include('ecommerce.urls.product_urls')),
     path('api/orders/', include('ecommerce.urls.order_urls')),
+    path('api/users/', include('ecommerce.urls.user_urls')),
     path('quora/', include('quora.urls')),
 
 #Swagger API Docs
