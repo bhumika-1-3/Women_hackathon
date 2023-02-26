@@ -8,6 +8,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import ProductsList from './Home/ProductsList';
 import Home from './Home/HomeScreen';
 import Chat from './Home/Chat';
+import ProfileScreen from './Home/Profile';
 
 export default function BottomNavigation() {
     const Bottom = createBottomTabNavigator();
@@ -85,7 +86,7 @@ export default function BottomNavigation() {
 
             <Bottom.Screen
                 name="Profile"
-                component={Temp}
+                component={ProfileScreen}
                 options={{
                     headerShown: false,
                     tabBarIcon: tabInfo => {

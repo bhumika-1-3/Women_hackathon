@@ -9,6 +9,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Register from './Screens/Auth/Register';
 import Ecommerce from './Screens/Home/Ecommerce';
+import AddFamily from './Screens/Home/AddFamily';
 // import Navigation from './Screens/FooterNav';
 
 export default function App() {
@@ -32,6 +33,8 @@ export default function App() {
             options={{
               title: 'My Cycle',
             }} name="Home" component={Ecommerce} />
+          <Stack.Screen name="Family" component={AddFamily} />
+            
 
         </Stack.Navigator>
       </NavigationContainer>

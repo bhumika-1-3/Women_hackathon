@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image } from 'react-native'
 import CustomTextInput from './InputTag'
 import { Ionicons } from '@expo/vector-icons';
@@ -6,6 +6,36 @@ import img from "../../Images/register1.gif"
 import { AntDesign } from '@expo/vector-icons';
 
 const Login = ({ navigation }) => {
+    const [sendData, setData] = useState({
+        email: "",
+        password: "",
+    });
+    const sendDataToApi = async (data) => {
+        try {
+            const response = await fetch('http://womenhackathon.pythonanywhere.com/account/login/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json ; charset=UTF-8'
+                },
+                body: JSON.stringify({
+                    email: sendData.email,
+                    password: sendData.password,
+                })
+            });
+
+            const responseData = await response.json();
+            console.log(responseData); // do something with the response data
+            navigation.navigate('Home', "Bhumika")
+        } catch (error) {
+            console.error(error);
+        }
+    }
+    const inputChangeHandler = (value, name) => {
+        setData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
     return (
         <View>
             {/* <View className="h-40 self-center p-4"> */}
@@ -26,22 +56,18 @@ const Login = ({ navigation }) => {
                 <CustomTextInput
                     placeholder={'Enter Email Id'}
                     icon={"email"}
-                    // value={email}
-                    onChangeText={txt => {
-                        setEmail(txt);
-                    }}
+                    value={sendData.email}
+                    onChangeText={value => inputChangeHandler(value, 'email')}
                 />
                 <CustomTextInput
                     type={'password'}
                     placeholder={'Enter Password'}
                     icon={"account-lock"}
-                    // value={password}
-                    onChangeText={txt => {
-                        setPassword(txt);
-                    }}
+                    value={sendData.password}
+                    onChangeText={value => inputChangeHandler(value, 'password')}
                 />
                 <Text className="self-end px-8 py-3 font-bold text-rose-500">Forgot password ?</Text>
-                <TouchableOpacity onPress={() => navigation.navigate('Home', "Bhumika")} className="m-5 flex-row bg-rose-500 dark:bg-zinc-200 p-3 rounded-lg w-10/12 self-center justify-center">
+                <TouchableOpacity onPress={sendDataToApi} className="m-5 flex-row bg-rose-500 dark:bg-zinc-200 p-3 rounded-lg w-10/12 self-center justify-center">
                     <Text className="text-zinc-200 dark:text-slate-900 text-lg font-bold">Login
                         &nbsp;
                         <Ionicons name="ios-arrow-redo-sharp" size={24} color="white" />
