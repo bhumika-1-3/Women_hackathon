@@ -130,7 +130,7 @@ const Navbar = () => {
             <li className="nav-item">
               <NavLink
                 exact
-                to="https://video-call.up.railway.app/7b253026-9827-41f3-bf1b-ea8c15941543"
+                to="https://zoom-clone-production-1d01.up.railway.app/e8ab646f-f9c1-41cf-aec0-11711f3b62c6"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}

@@ -10,7 +10,7 @@ import EmailIcon from '@mui/icons-material/Email';
 const Contactus = () => {
     return (
         <div>
-            <Grid container style={{ overflowX: "hidden", marginBottom: "-2vh" , fontFamily: 'Fondamento'}}>
+            <Grid container style={{ overflowX: "hidden", marginBottom: "-2vh" }}>
                 <Grid item xs={12}>
                     <Grid container spacing={2}>
                         <Grid item xs={12}>

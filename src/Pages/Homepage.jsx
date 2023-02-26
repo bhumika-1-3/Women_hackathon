@@ -59,7 +59,7 @@ const Homepage = () => {
                     <Grid item xs={12} style={{ fontSize: "3rem" }}>
                       RED RHYTHM
                     </Grid>
-                    <Grid item xs={12} style={{ fontSize: "1.5rem", padding: "3rem 2rem" }}>
+                    <Grid item xs={12} style={{ fontSize: "1.5rem", padding: "3rem 2rem",fontFamily:"Roboto" }}>
                       HealthyWomen(HW) is the nation's leading not-for-profit, independent health & wellness information source for women. The resource gives women the latest health information, including news updates, health tips, resources and extensive coverage of hundreds of health topics.
                       Also in Health Education Websites
                     </Grid>
@@ -80,7 +80,7 @@ const Homepage = () => {
                     <Grid item xs={12} style={{ fontSize: "3rem" }}>
                       RED RHYTHM
                     </Grid>
-                    <Grid item xs={12} style={{ fontSize: "1.5rem", padding: "3rem 2rem" }}>
+                    <Grid item xs={12} style={{ fontSize: "1.5rem", padding: "3rem 2rem", fontFamily:"Roboto" }}>
                       The National Women's Health Network improves the health of all women by developing and promoting a critical analysis of
                       health issues in order to affect policy and support consumer decision-making. The Network aspires to a health care system that is guided by social justice and reflects the needs of diverse women.
                     </Grid>
@@ -101,7 +101,7 @@ const Homepage = () => {
                     <Grid item xs={12} style={{ fontSize: "3rem" }}>
                       RED RHYTHM
                     </Grid>
-                    <Grid item xs={12} style={{ fontSize: "1.5rem", padding: "3rem 2rem" }}>
+                    <Grid item xs={12} style={{ fontSize: "1.5rem", padding: "3rem 2rem",fontFamily:"Roboto" }}>
                       Healthista is dedicated to your health and wellbeing for women. Our network of journalists, editors, bloggers,
                       experts and producers bring you health news, features, blogs and videos that make it easier for you to look and feel better.
                       Get useful, practical advice to make you look and feel better.
@@ -123,7 +123,7 @@ const Homepage = () => {
                     <Grid item xs={12} style={{ fontSize: "3rem" }}>
                       RED RHYTHM
                     </Grid>
-                    <Grid item xs={12} style={{ fontSize: "1.5rem", padding: "3rem 2rem" }}>
+                    <Grid item xs={12} style={{ fontSize: "1.5rem", padding: "3rem 2rem",fontFamily:"Roboto" }}>
                       SheKnows helps empower women through articles and discussion related to parenting, women's health,
                       family-friendly recipes & relationship advice.
                       Follow to get great health information on women's health, nutrition, sleep, aging, stress, and more.
