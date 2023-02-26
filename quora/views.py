@@ -98,16 +98,16 @@ class SMSFamilyView(APIView):
             auth_token = config('TWILIO_AUTH_TOKEN')
             client = Client(account_sid, auth_token)
             content[member.name] = member.phone
-            # try: 
-            #     message = client.messages.create(
-            #                                 messaging_service_sid=config('MESSAGING_SERVICE_SID'),
-            #                                 body= "Hi! We wanted to let you know that  " + str(user.first_name) + " will get her period soon. Thank you for your support.",
-            #                                 to = member.phone
-            #                             )
-            #     print(message)
-            # except:
-            #     content = {'detail': 'SMS could not be sent'}
-            #     return JsonResponse(content, status = status.HTTP_404_NOT_FOUND)
+            try: 
+                message = client.messages.create(
+                                            messaging_service_sid=config('MESSAGING_SERVICE_SID'),
+                                            body= "Hey, just a gentle reminder to take good care of " + str(user.first_name) + " during her period. It can be a tough time, and a little bit of extra love and support can go a long way. Let her know that you're there for her and that you care.",
+                                            to = member.phone
+                                        )
+                print(message)
+            except:
+                content = {'detail': 'SMS could not be sent'}
+                return JsonResponse(content, status = status.HTTP_404_NOT_FOUND)
 
         content['detail'] = 'SMS sent'
         return JsonResponse(content, status = status.HTTP_200_OK)
