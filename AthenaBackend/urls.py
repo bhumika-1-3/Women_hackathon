@@ -48,6 +48,10 @@ urlpatterns = [
     path('family/', views.FamilyView.as_view(), name = 'family'),
     path('family/sms/', views.SMSFamilyView.as_view(), name = 'smsfamily'),
 
+    path('profile/', views.ProfileView.as_view(), name = "profile"),
+    path('profile/add-daily/', views.DailyView.as_view(), name = "daily"),
+    path('profile/add-monthly/', views.MonthlyPeriodTrackerView.as_view(), name = 'monthly'),
+
 #Swagger API Docs
 
     path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),

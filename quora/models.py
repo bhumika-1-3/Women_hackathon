@@ -1,4 +1,5 @@
 from django.db import models
+
 from django.contrib.auth import get_user_model
 
 # Create your models here.
@@ -38,3 +39,24 @@ class Family(models.Model):
 
     def __str__(self):
         return str(self.user.email) + '-'+str(self.relation)
+    
+class Daily(models.Model):
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    date = models.DateField()
+    water = models.CharField(max_length=200)
+    mood = models.CharField(max_length=200)
+
+    def __str__(self):
+        return str(self.user.email)+'-'+str(self.date)
+    
+
+class MonthlyPeriodTracker(models.Model):
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    period_length = models.CharField(max_length=200)
+    cycle_length = models.CharField(max_length=200)
+    date = models.DateField()
+    symptoms = models.TextField(max_length=200)
+
+    def __str__(self):
+        return str(self.user.email)+'-'+str(self.month)
+

@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.http.response import Http404, HttpResponse, JsonResponse
 from rest_framework import (mixins, generics, status, permissions)
-from .serializers import PostSerializer,CommentSerializer, AddPostSerializer, FamilySerializer
+from .serializers import ProfileSerializer, PostSerializer,CommentSerializer, AddPostSerializer, FamilySerializer, DailySerializer,MonthlyPeriodTrackerSerializer
+from accounts.serializers import ViewUserSerializer
 from .models import Post, Comment
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
-from .models import Post,Comment, Family
+from .models import Post,Comment, Family, Daily,MonthlyPeriodTracker
 
 from twilio.rest import Client
 
@@ -13,6 +14,56 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 # Create your views here.
+
+
+
+class ProfileView(APIView):
+    serializer_class = ProfileSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get(self,request):
+        user = User.objects.get(email = request.user)
+        serializer = ProfileSerializer(user)
+        return JsonResponse(serializer.data, status = status.HTTP_200_OK)
+
+    def put(self, request):
+        user = User.objects.get(email = request.user)
+        serializer = ViewUserSerializer(instance = user, data=request.data, partial = True)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data, status = status.HTTP_202_ACCEPTED)
+        content = {'detail': 'Serializer not valid'}
+        return JsonResponse(content, status = status.HTTP_400_BAD_REQUEST)
+
+
+class DailyView(APIView):
+    serializer_class = DailySerializer
+    permission_classes = [IsAuthenticated]
+
+    def post(self,request):
+        user = User.objects.get(email = request.user)
+        daily = Daily(user = user)
+        serializer = DailySerializer(daily,data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data, status = status.HTTP_202_ACCEPTED)
+        return JsonResponse(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
+    
+
+class MonthlyPeriodTrackerView(APIView):
+    serializer_class = MonthlyPeriodTrackerSerializer
+    permission_classes = [IsAuthenticated]
+
+    def post(self,request):
+        user = User.objects.get(email = request.user)
+        monthly = MonthlyPeriodTracker(user = user)
+        serializer = MonthlyPeriodTrackerSerializer(monthly,data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data, status = status.HTTP_202_ACCEPTED)
+        return JsonResponse(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
+    
+
 
 class FamilyView(APIView):
     serializer_class = FamilySerializer
