@@ -7,6 +7,8 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import IconButton from '@mui/material/IconButton';
 import image from '../Images/login.png'
+import Swal from 'sweetalert2';
+import { useNavigate } from "react-router-dom";
 const validationSchema = yup.object({
     email: yup
         .string('Enter your email')
@@ -20,6 +22,7 @@ const validationSchema = yup.object({
 
 
 const Login = () => {
+    const navigate = useNavigate();
     const formik = useFormik({
         initialValues: {
             email: '',
@@ -28,6 +31,27 @@ const Login = () => {
         validationSchema: validationSchema,
         onSubmit: (values) => {
             console.log(values);
+            const token = localStorage.setItem("token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3NjUxNTkyLCJpYXQiOjE2NzczOTIzOTIsImp0aSI6IjE0NGZjZmEzMzgyYTRhNWFhMjQwNGY2YTUxZDJmODU4IiwidXNlcl9pZCI6N30.Yt2Vt_rNa27R0_00eMjlwlBVe0za35JcM9VH0eFFZqE")
+            const formData = new FormData();
+            formData.append("email", values.email);
+            formData.append("password", values.password);
+            fetch("http://womenhackathon.pythonanywhere.com/account/login/", {
+                method: "POST",
+                body: formData,
+            })
+                .then((result) => {
+                    console.log(result)
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Successfully Logged In',
+                        showConfirmButton: false,
+                        timer: 3000
+                    })
+                    navigate("/homepage");
+                })
+                .catch(() => {
+                    alert('Error in the Code');
+                });
         },
     });
 
@@ -43,10 +67,10 @@ const Login = () => {
         <div>
             <Grid container spacing={2}>
                 <Grid item xs={12} md={7}>
-                    <img src={image} style={{width:"100%" , height:"100%" , margin:"1rem"}} />
+                    <img src={image} style={{ width: "100%", height: "100%", margin: "1rem" }} />
                 </Grid>
-                <Grid item xs={12} md={5} style={{marginBottom:"8rem",}}>
-                    <div style={{ fontSize: "1.5rem"}} className="top-marg">
+                <Grid item xs={12} md={5} style={{ marginBottom: "8rem", }}>
+                    <div style={{ fontSize: "1.5rem" }} className="top-marg">
                         Login
                     </div>
                     <div>
@@ -95,7 +119,7 @@ const Login = () => {
                             </Grid>
                             <Button color="secondary" variant="contained" type="submit"
                                 sx={{ width: "90%", marginTop: "1.2rem", fontSize: "1.1rem" }}>
-                                <Link to="/" style={{textDecoration:"none" , color:"white"}}>Submit</Link>
+                                Submit
                             </Button>
                             <div style={{ marginTop: "1.1rem", fontSize: "1.1rem" }}>
                                 New User ?

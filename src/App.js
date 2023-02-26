@@ -16,8 +16,8 @@ import Family from './Pages/Family';
 function App() {
   return (
     <Routes>
-      <Route path="/login" element={<Login/>}/>
-      <Route path="/" element={<><Navbar/><Homepage/><Footer/></>}/>
+      <Route path="/" element={<Login/>}/>
+      <Route path="/homepage" element={<><Navbar/><Homepage/><Footer/></>}/>
       <Route path="/signup" element={<Signup/>} />
       <Route path="/contactus" element={<><Navbar/><Contactus/><Footer/></>} />
       <Route path="/blog" element={<><Navbar/><Blog/><Footer/></>}/>

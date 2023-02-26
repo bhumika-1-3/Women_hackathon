@@ -42,7 +42,7 @@ const Navbar = () => {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/"
+                to="/homepage"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
