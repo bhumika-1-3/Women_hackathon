@@ -1,16 +1,65 @@
 from django.shortcuts import render
 from django.http.response import Http404, HttpResponse, JsonResponse
 from rest_framework import (mixins, generics, status, permissions)
-from .serializers import PostSerializer,CommentSerializer, AddPostSerializer
+from .serializers import PostSerializer,CommentSerializer, AddPostSerializer, FamilySerializer
 from .models import Post, Comment
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
-from .models import Post,Comment
+from .models import Post,Comment, Family
+
+from twilio.rest import Client
 
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
 # Create your views here.
+
+class FamilyView(APIView):
+    serializer_class = FamilySerializer
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        user = User.objects.get(email = request.user)
+        family = Family.objects.filter(user = user)
+        serializer = FamilySerializer(family, many = True)
+        return JsonResponse(serializer.data,safe = False, status = status.HTTP_200_OK)
+
+    def post(self,request):
+        user = User.objects.get(email = request.user)
+        post = Family(user = user)
+        serializer = FamilySerializer(post,data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data, status = status.HTTP_202_ACCEPTED)
+        return JsonResponse(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
+    
+
+class SMSFamilyView(APIView):
+
+    def post(self,request):
+        user = User.objects.get(email = request.user)
+        family = Family.objects.filter(user = user)
+
+
+        content = {}
+        for member in family:
+            account_sid = config('TWILIO_ACCOUNT_SID')
+            auth_token = config('TWILIO_AUTH_TOKEN')
+            client = Client(account_sid, auth_token)
+            content[member.name] = member.phone
+            # try: 
+            #     message = client.messages.create(
+            #                                 messaging_service_sid=config('MESSAGING_SERVICE_SID'),
+            #                                 body= "Hi! We wanted to let you know that  " + str(user.first_name) + " will get her period soon. Thank you for your support.",
+            #                                 to = member.phone
+            #                             )
+            #     print(message)
+            # except:
+            #     content = {'detail': 'SMS could not be sent'}
+            #     return JsonResponse(content, status = status.HTTP_404_NOT_FOUND)
+
+        content['detail'] = 'SMS sent'
+        return JsonResponse(content, status = status.HTTP_200_OK)
 
 # view => post + comments
 # add post

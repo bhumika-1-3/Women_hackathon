@@ -23,8 +23,18 @@ class Comment(models.Model):
     anonymous = models.BooleanField(default=False)
     like = models.IntegerField(null=True, blank=True, default=0)
     dislike = models.IntegerField(null=True, blank=True, default=0)
-    answer     = models.TextField()
-    createdAt   = models.DateTimeField(auto_now_add=True)
+    answer  = models.TextField()
+    createdAt = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
         return str(self.answer) + '-' +str(self.rating)
+
+
+class Family(models.Model):
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    phone = models.CharField(max_length=13)
+    name = models.CharField(max_length=300)
+    relation = models.CharField(max_length=300)
+
+    def __str__(self):
+        return str(self.user.email) + '-'+str(self.relation)

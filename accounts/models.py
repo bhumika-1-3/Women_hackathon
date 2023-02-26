@@ -22,6 +22,7 @@ class User(AbstractUser):
     image = models.ImageField(upload_to = upload_path_handler,null = True, blank = True)
     auth_provider = models.CharField(max_length = 255, blank = False, null = False, default=AUTH_PROVIDERS.get('email'))
     is_admin = models.BooleanField(default = False)
+    phone = models.CharField(max_length=13,null = True, blank = True)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []

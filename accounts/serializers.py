@@ -9,7 +9,7 @@ class UserSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = User
-        fields = ['email', 'password','first_name','last_name','DOB']
+        fields = ['email', 'password','first_name','last_name','DOB','phone']
 
     def create(self, validated_data):
         validated_data['is_active'] = False

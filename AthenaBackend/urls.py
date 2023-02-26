@@ -21,6 +21,7 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
+from quora import views
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -43,6 +44,9 @@ urlpatterns = [
     path('api/orders/', include('ecommerce.urls.order_urls')),
     path('api/users/', include('ecommerce.urls.user_urls')),
     path('quora/', include('quora.urls')),
+
+    path('family/', views.FamilyView.as_view(), name = 'family'),
+    path('family/sms/', views.SMSFamilyView.as_view(), name = 'smsfamily'),
 
 #Swagger API Docs
 
