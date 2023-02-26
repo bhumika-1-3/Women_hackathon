@@ -78,7 +78,7 @@ export default function Chat() {
     }
     useLayoutEffect(() => {
         const coll = collection(database, "chats");
-        const queryr = query(coll, ref => ref.orderBy('createdAt', 'desc'));
+        const queryr = query(coll, ref => ref.orderBy('createdAt'));
 
         const unsubscribe = onSnapshot(queryr, snapshot => {
             console.log("snapshot");
