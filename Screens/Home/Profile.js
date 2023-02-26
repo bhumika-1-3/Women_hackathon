@@ -16,7 +16,11 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 // import files from '../assets/filesBase64';
 
 const ProfileScreen = ({ navigation }) => {
-    const [fam, setFam] = useState(null);
+    const [fam, setFam] = useState({
+        first_name:"xx",
+        last_name:"xx",
+        email:"abc@"
+    });
     const [yes, no] = useState(false);
     const myCustomShare = async () => {
         navigation.navigate('Family')
