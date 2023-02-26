@@ -43,9 +43,9 @@ class SignUp(generics.GenericAPIView):
             user_data = serializer1.save()
 
             token = RefreshToken.for_user(user_data).access_token
-            
+            current_site = get_current_site(request).domain
             relative_link = reverse('EmailVerification')
-            abs_url = settings.FRONT_END_HOST + relative_link + "?token=" + str(token)
+            abs_url = current_site + relative_link + "?token=" + str(token)
             email_body = "Hiii" + "! Use link below to verify your email \n"+ abs_url
             data ={'email_body': email_body, 'email_subject': "Verify your Email",'to_email':user_data.email}
             
