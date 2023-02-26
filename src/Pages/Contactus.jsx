@@ -10,7 +10,7 @@ import EmailIcon from '@mui/icons-material/Email';
 const Contactus = () => {
     return (
         <div>
-            <Grid container style={{ overflowX: "hidden", marginBottom: "-2vh" }}>
+            <Grid container style={{ overflowX: "hidden", marginBottom: "-2vh" , fontFamily: 'Fondamento'}}>
                 <Grid item xs={12}>
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
@@ -49,7 +49,7 @@ const Contactus = () => {
                                         <Grid item xs={8} style={{ backgroundColor: "white" }}>
                                             <Grid container spacing={2}>
                                                 <Grid item xs={12} style={{ fontSize: "1.7rem", fontWeight: "600" }}>
-                                                    Our Methodology
+                                                    Our Services
                                                 </Grid>
                                                 <Grid item xs={12}>
                                                     <hr style={{ width: "20vh", height: "0.7vh", backgroundColor: "#0B241E", border: "none" }} />
@@ -60,7 +60,7 @@ const Contactus = () => {
                                                             <Grid container spacing={3}>
                                                                 <Grid item xs={3}><LooksOneIcon style={{ width: "6vh", height: "6vh" }} /></Grid>
                                                                 <Grid item xs={9} style={{ fontSize: "1.5rem", fontWeight: "600", color: "#0B241E", marginTop: "0.5vh" }}>
-                                                                    Social Media Trends
+                                                                    PCOS Detection
                                                                 </Grid>
                                                                 <Grid item xs={12}>
                                                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -71,7 +71,7 @@ const Contactus = () => {
                                                             <Grid container spacing={3}>
                                                                 <Grid item xs={3}><LooksTwoIcon style={{ width: "6vh", height: "6vh" }} /></Grid>
                                                                 <Grid item xs={9} style={{ fontSize: "1.5rem", fontWeight: "600", color: "#0B241E", marginTop: "0.5vh" }}>
-                                                                    Flipkart Trends
+                                                                    Period Tracking
                                                                 </Grid>
                                                                 <Grid item xs={12}>
                                                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -82,7 +82,7 @@ const Contactus = () => {
                                                             <Grid container spacing={3}>
                                                                 <Grid item xs={3}><Looks3Icon style={{ width: "6vh", height: "6vh" }} /></Grid>
                                                                 <Grid item xs={9} style={{ fontSize: "1.5rem", fontWeight: "600", color: "#0B241E", marginTop: "0.5vh" }}>
-                                                                    Youtube Influencers
+                                                                    Community Networking
                                                                 </Grid>
                                                                 <Grid item xs={12}>
                                                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -93,7 +93,7 @@ const Contactus = () => {
                                                             <Grid container spacing={3}>
                                                                 <Grid item xs={3}><Looks4Icon style={{ width: "6vh", height: "6vh" }} /></Grid>
                                                                 <Grid item xs={9} style={{ fontSize: "1.5rem", fontWeight: "600", color: "#0B241E", marginTop: "0.5vh" }}>
-                                                                    Fashion Influencers
+                                                                    Mental Health
                                                                 </Grid>
                                                                 <Grid item xs={12}>
                                                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

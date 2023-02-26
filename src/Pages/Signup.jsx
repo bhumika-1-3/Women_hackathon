@@ -17,6 +17,15 @@ const validationSchema = yup.object({
         .string('Enter your password')
         .min(8, 'Password should be of minimum 8 characters length')
         .required('Password is required'),
+    name: yup
+        .string('Enter your Name')
+        .required('Name is required'),
+    height: yup
+        .string('Enter your Height')
+        .required('Height is required'),
+    weight: yup
+        .string('Enter your Weight')
+        .required('Weight is required'),
     phone: yup.string()
         .required("Phone number is required")
         .matches(
@@ -34,6 +43,9 @@ const Signup = () => {
             email: '',
             password: '',
             phone: '',
+            name: '',
+            height:'',
+            weight:'',
         },
         validationSchema: validationSchema,
         onSubmit: (values) => {
@@ -65,6 +77,20 @@ const Signup = () => {
                             <Grid container spacing={2} marginTop={2}>
                                 <Grid item xs={12}>
                                     <TextField
+                                        id="name"
+                                        name="name"
+                                        label="Full Name"
+                                        type="text"
+                                        color='secondary'
+                                        value={formik.values.name}
+                                        onChange={formik.handleChange}
+                                        error={formik.touched.password && Boolean(formik.errors.name)}
+                                        helperText={formik.touched.name && formik.errors.name}
+                                        sx={{ width: "90%" }}
+                                    />
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <TextField
                                         id="email"
                                         name="email"
                                         label="Email"
@@ -87,6 +113,34 @@ const Signup = () => {
                                         onChange={formik.handleChange}
                                         error={formik.touched.password && Boolean(formik.errors.phone)}
                                         helperText={formik.touched.phone && formik.errors.phone}
+                                        sx={{ width: "90%" }}
+                                    />
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <TextField
+                                        id="height"
+                                        name="height"
+                                        label="Your height"
+                                        type="text"
+                                        color='secondary'
+                                        value={formik.values.height}
+                                        onChange={formik.handleChange}
+                                        error={formik.touched.password && Boolean(formik.errors.height)}
+                                        helperText={formik.touched.height && formik.errors.height}
+                                        sx={{ width: "90%" }}
+                                    />
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <TextField
+                                        id="weight"
+                                        name="weight"
+                                        label="Your weight"
+                                        type="text"
+                                        color='secondary'
+                                        value={formik.values.weight}
+                                        onChange={formik.handleChange}
+                                        error={formik.touched.password && Boolean(formik.errors.weight)}
+                                        helperText={formik.touched.weight && formik.errors.weight}
                                         sx={{ width: "90%" }}
                                     />
                                 </Grid>

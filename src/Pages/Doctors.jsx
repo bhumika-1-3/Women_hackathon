@@ -5,11 +5,11 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import Person3Icon from '@mui/icons-material/Person3';
 import SmsIcon from '@mui/icons-material/Sms';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
-import doc1 from "../Images/Doctors/1.png";
-import doc2 from "../Images/Doctors/2.png";
-import doc3 from "../Images/Doctors/3.png";
-import doc4 from "../Images/Doctors/4.png";
-import doc5 from "../Images/Doctors/5.png";
+import doc1 from "../Images/Doctors/1.webp";
+import doc2 from "../Images/Doctors/2.webp";
+import doc3 from "../Images/Doctors/3.webp";
+import doc4 from "../Images/Doctors/4.webp";
+import doc5 from "../Images/Doctors/6.png";
 const Doctors = () => {
   const [visible, setVisible] = useState(3);
 
@@ -32,9 +32,9 @@ const Doctors = () => {
 
   return (
     <Box>
-      <Grid container spacing={2} padding={2}>
+      <Grid container spacing={2} padding={2} style={{fontFamily: 'Fondamento'}}>
         <Grid item xs={12} sx={{ fontSize: "2.5rem", marginTop: "2rem", }}>
-          <div>Search Doctor, Make an Appointemnt</div>
+          <div>Search Doctor, Make an Appointment</div>
         </Grid>
         <Grid item xs={12} sx={{ fontSize: "1.5rem", marginBottom: "2rem" }}>
           <div>Discover the best doctors, clinic & hospital in the city nearest to you</div>
@@ -43,14 +43,14 @@ const Doctors = () => {
           <Search />
         </Grid>
         <Grid item xs={12} md={8} sm={12}>
-          <Grid container spacing={2} sx={{ paddingLeft: "1rem" }}>
+          <Grid container spacing={2} sx={{ paddingLeft: "1rem", fontFamily: 'Roboto' }}>
             {upcoming.slice(0, visible).map((item) => {
               return (
                 <Grid item xs={12} md={4} sm={6} style={{border:"1px solid pink", borderRadius:"2rem"}}>
                   <Grid container spacing={2} sx={{ borderRadius: "2vh", padding: "1rem" }}>
                     <Grid item xs={12} style={{
-                      height: "30vh", backgroundImage: `url(${item.image})`, backgroundPositionX: "50%",
-                      backgroundSize: 'contain', borderRadius: "1vh"
+                      height: "40vh", backgroundImage: `url(${item.image})`, backgroundPositionX: "50%",
+                      backgroundSize: 'cover', borderRadius: "1vh"
                     }}>
                     </Grid>
                     <Grid item xs={12}>

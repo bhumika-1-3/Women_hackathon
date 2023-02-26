@@ -60,7 +60,7 @@ const Blog = () => {
 
   return (
     <Box>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} style={{fontFamily: 'Fondamento'}}>
         <Grid item xs={12} sx={{ fontSize: "2.5rem", marginTop: "2rem", }}>
           <div>Curated Health Articles</div>
         </Grid>
@@ -73,7 +73,7 @@ const Blog = () => {
         <Grid item xs={12} md={5} sm={12}>
           <Question />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} style={{fontFamily: 'Charm'}}>
           <Grid container spacing={2} sx={{ paddingLeft: "1rem" }}>
             {load.slice(0, visible).map((item) => {
               return (

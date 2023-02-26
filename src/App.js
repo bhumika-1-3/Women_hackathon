@@ -11,6 +11,7 @@ import Dailyinsights from './Pages/Dailyinsights';
 import Doctors from './Pages/Doctors';
 import Ecommerce from './Pages/Ecommerce';
 import Pcostracking from './Pages/Pcostracking';
+import Family from './Pages/Family';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route path="/doctors" element={<><Navbar/><Doctors/><Footer/></>}/>
       <Route path="/ecommerce" element={<><Navbar/><Ecommerce/><Footer/></>}/>
       <Route path="/pcostracking" element={<><Navbar/><Pcostracking/><Footer/></>}/>
+      <Route path="/family" element={<><Navbar/><Family/><Footer/></>}/>
     </Routes>
   );
 }

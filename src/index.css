@@ -1,8 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Fondamento&family=Roboto:wght@400;500&family=Source+Sans+Pro&display=swap');
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -17,7 +16,7 @@ code {
   margin-top: 18rem;
 }
 .top-marg-signup{
-  margin-top: 15rem;
+  margin-top: 12rem;
 }
 .hide-feature{
   display: none;
