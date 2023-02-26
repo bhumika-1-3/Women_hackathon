@@ -19,15 +19,15 @@ const Doctors = () => {
 
   const upcoming = [
     { name: "Elyssa Perry", type: "job type", company: "Gynecologist", address: "address", email: "dsfhsgj@gmail.com", phone: "98745162309", image: doc1 },
-    { name: "Elyssa Perry", type: "job type", company: "Gynecologist", address: "address", email: "dsfhsgj@gmail.com", phone: "98745162309", image: doc2 },
-    { name: "Elyssa Perry", type: "job type", company: "Gynecologist", address: "address", email: "dsfhsgj@gmail.com", phone: "98745162309", image: doc3 },
-    { name: "Elyssa Perry", type: "job type", company: "Gynecologist", address: "address", email: "dsfhsgj@gmail.com", phone: "98745162309", image: doc4 },
-    { name: "Elyssa Perry", type: "job type", company: "Gynecologist", address: "address", email: "dsfhsgj@gmail.com", phone: "98745162309", image: doc5 },
-    { name: "Elyssa Perry", type: "job type", company: "Gynecologist", address: "address", email: "dsfhsgj@gmail.com", phone: "98745162309", image: doc1 },
-    { name: "Elyssa Perry", type: "job type", company: "Gynecologist", address: "address", email: "dsfhsgj@gmail.com", phone: "98745162309", image: doc2 },
-    { name: "Elyssa Perry", type: "job type", company: "Gynecologist", address: "address", email: "dsfhsgj@gmail.com", phone: "98745162309", image: doc3 },
-    { name: "Elyssa Perry", type: "job type", company: "Gynecologist", address: "address", email: "dsfhsgj@gmail.com", phone: "98745162309", image: doc4 },
-    { name: "Elyssa Perry", type: "job type", company: "Gynecologist", address: "address", email: "dsfhsgj@gmail.com", phone: "98745162309", image: doc5 }
+    { name: "Melody Vincet", type: "job type", company: "Dermatologist", address: "address", email: "dsfhsgj@gmail.com", phone: "98745162309", image: doc2 },
+    { name: "Roselyn Fritz", type: "job type", company: "Dentist", address: "address", email: "dsfhsgj@gmail.com", phone: "98745162309", image: doc3 },
+    { name: "Haylie Barrett", type: "job type", company: "General Physician", address: "address", email: "dsfhsgj@gmail.com", phone: "98745162309", image: doc4 },
+    { name: "Saige Ross", type: "job type", company: "Breast Care Specialist", address: "address", email: "dsfhsgj@gmail.com", phone: "98745162309", image: doc5 },
+    { name: "Ainne Rivea", type: "job type", company: "Gynecologist", address: "address", email: "dsfhsgj@gmail.com", phone: "98745162309", image: doc1 },
+    { name: "Carlie Hoover", type: "job type", company: "Dermatologist", address: "address", email: "dsfhsgj@gmail.com", phone: "98745162309", image: doc2 },
+    { name: "Giannay Rosaria", type: "job type", company: "Gynecologist", address: "address", email: "dsfhsgj@gmail.com", phone: "98745162309", image: doc3 },
+    { name: "Gloria Gilmore", type: "job type", company: "Breast Care Specialist", address: "address", email: "dsfhsgj@gmail.com", phone: "98745162309", image: doc4 },
+    { name: "Michelle Mendoza", type: "job type", company: "General Physician", address: "address", email: "dsfhsgj@gmail.com", phone: "98745162309", image: doc5 }
   ];
 
   return (

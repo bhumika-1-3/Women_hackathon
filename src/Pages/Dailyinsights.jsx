@@ -17,17 +17,17 @@ const Dailyinsights = () => {
         id: "basic-bar"
       },
       xaxis: {
-        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+        categories: ["Aug", "Sept", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar"]
       }
     },
     series: [
       {
-        name: "series-1",
-        data: [30, 40, 45, 50, 49, 60, 70, 91]
+        name: "Period Length",
+        data: [30, 28, 27, 30, 25, 29, 31, 30]
       },
       {
-        name: "series-2",
-        data: [30, 40, 45, 50, 49, 60, 70, 91]
+        name: "Cycle Length",
+        data: [7, 6, 6, 7, 6, 7, 6, 7]
       }
     ]
   });

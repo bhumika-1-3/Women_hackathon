@@ -2,7 +2,8 @@ import { Grid, InputAdornment, TextField, Button } from '@mui/material'
 import React, { useState, useEffect } from 'react'
 import { useFormik } from "formik";
 import * as yup from 'yup';
-
+import Swal from 'sweetalert2';
+import { useNavigate } from "react-router-dom";
 const validationSchema = yup.object({
     email: yup
         .string('Enter your email')
@@ -11,6 +12,7 @@ const validationSchema = yup.object({
 
 
 const Answer = () => {
+    const navigate = useNavigate();
     const formik = useFormik({
         initialValues: {
             email: '',
@@ -29,6 +31,13 @@ const Answer = () => {
             })
                 .then((result) => {
                     console.log(result)
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Thank You !Your response was successfully added',
+                        showConfirmButton: false,
+                        timer: 3000
+                      })
+                      navigate('/blog')
                 })
                 .catch(() => {
                     alert('Error in the Code');

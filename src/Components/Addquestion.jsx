@@ -4,7 +4,8 @@ import { useFormik } from "formik";
 import * as yup from 'yup';
 import { Link } from 'react-router-dom';
 import image from '../Images/login.png'
-
+import Swal from 'sweetalert2';
+import { useNavigate } from "react-router-dom";
 const validationSchema = yup.object({
     email: yup
         .string('Enter your email')
@@ -13,6 +14,7 @@ const validationSchema = yup.object({
 
 
 const Question = () => {
+    const navigate = useNavigate();
     const formik = useFormik({
         initialValues: {
             email: '',
@@ -30,6 +32,14 @@ const Question = () => {
             })
                 .then((result) => {
                     console.log(result)
+                    console.log(result)
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Thank You !Your response was successfully added',
+                        showConfirmButton: false,
+                        timer: 3000
+                      })
+                      navigate('/blog')
                 })
                 .catch(() => {
                     alert('Error in the Code');
